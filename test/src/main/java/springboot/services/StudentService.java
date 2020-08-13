@@ -4,8 +4,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import springboot.entity.Userok;
-import springboot.repository.UserokRepo;
+import springboot.entity.Student;
+import springboot.repository.StudentRepo;
 
 import javax.transaction.Transactional;
 
@@ -13,18 +13,18 @@ import javax.transaction.Transactional;
 @Transactional
 @RequiredArgsConstructor
 @Service
-public class UserokService {
+public class StudentService {
 
     @Autowired
-    private final UserokRepo userokRepo;
+    private final StudentRepo studentRepo;
 
     public boolean createUserokOk(String name, int age) {
         try {
-            Userok userok = new Userok();
-            userok.setName("Tatiyana");
-            userok.setAge(27);
-            userok.setId(1L);
-            userokRepo.saveAndFlush(userok);
+            Student student = new Student();
+            student.setName("Tatiyana");
+            student.setAge(27);
+            student.setId(1L);
+            studentRepo.saveAndFlush(student);
         } catch (Throwable e) {
             log.error(e.getMessage());
         }
