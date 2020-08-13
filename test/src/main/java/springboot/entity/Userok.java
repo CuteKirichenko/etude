@@ -18,5 +18,4 @@ public class Userok {
     @Column(name = "age")
     private Integer age;
 
-
 }

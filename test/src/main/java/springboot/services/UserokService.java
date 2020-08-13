@@ -2,6 +2,7 @@ package springboot.services;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import springboot.entity.Userok;
 import springboot.repository.UserokRepo;
@@ -14,6 +15,7 @@ import javax.transaction.Transactional;
 @Service
 public class UserokService {
 
+    @Autowired
     private final UserokRepo userokRepo;
 
     public boolean createUserokOk(String name, int age) {
